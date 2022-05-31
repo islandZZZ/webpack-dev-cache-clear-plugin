@@ -4,8 +4,7 @@
   "description": "a webpack plugin for Chrome dns &amp; socket pools cache clearing.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -18,7 +17,12 @@
     "url": "https://github.com/islandZZZ/webpack-dev-cache-clear-plugin/issues"
   },
   "homepage": "https://github.com/islandZZZ/webpack-dev-cache-clear-plugin#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "babel-jest": "^28.1.0",
+    "jest": "^28.1.0"
+  },
   "dependencies": {
     "colors": "^1.4.0",
     "commander": "^9.1.0",

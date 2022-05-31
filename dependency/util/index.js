@@ -49,5 +49,6 @@ const isMacOS = () => {
 module.exports = {
     getConfig,
     setConfig,
-    isMacOS
+    isMacOS,
+    MACOS_SYSTEM
 }
