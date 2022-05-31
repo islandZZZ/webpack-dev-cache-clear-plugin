@@ -1,4 +1,5 @@
 const { runTask } = require("../dependency/run")
+
 module.exports = class WebpackDevCacheClearPlugin {
     constructor(options) {
         this.options = options
