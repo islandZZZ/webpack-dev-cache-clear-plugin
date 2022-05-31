@@ -1,11 +1,11 @@
-name: GitHub Actions Build and Deploy Demo
+name: WebpackDevCacheClearPlugin
 on:
   push:
     branches:
       - main
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
     # 下载源码
     - name: Checkout
