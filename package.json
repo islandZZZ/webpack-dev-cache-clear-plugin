@@ -1,0 +1,27 @@
+{
+  "name": "webpack-dev-cache-clear-plugin",
+  "version": "0.0.1",
+  "description": "a webpack plugin for Chrome dns &amp; socket pools cache clearing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/islandZZZ/webpack-dev-cache-clear-plugin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/islandZZZ/webpack-dev-cache-clear-plugin/issues"
+  },
+  "homepage": "https://github.com/islandZZZ/webpack-dev-cache-clear-plugin#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^9.1.0",
+    "fs-extra": "^10.1.0"
+  }
+}
