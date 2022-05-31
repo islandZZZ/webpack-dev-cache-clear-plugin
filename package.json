@@ -1,6 +1,6 @@
 {
   "name": "webpack-dev-cache-clear-plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "a webpack plugin for Chrome dns &amp; socket pools cache clearing.",
   "main": "index.js",
   "scripts": {
