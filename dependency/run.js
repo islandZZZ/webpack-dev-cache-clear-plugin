@@ -6,14 +6,19 @@ const { chmodSync } = require('fs')
 const scriptPath = path.join(__dirname, './applescript/clear.scpt')
 const defaultChromeCacheDir = `${process.env.HOME}/Library/Caches/Google/Chrome/Default/Cache`
 const errMsg = 'WebpackDevCacheClearPlugin: Domains length must be greater than 0.'
+const { isMacOS } = require('./util/index')
 
 const runTask = async (_domains) => {
     const domains = _domains || []
-    
+
     if (!_domains.length) {
         console.log(colors.red(errMsg))
         return Promise.reject(errMsg)
-        return
+    }
+
+    if (!isMacOS()) {
+        console.log(colors.red('error: only macOS system is supported.'));
+        return Promise.reject('error: only macOS system is supported.')
     }
     
     chmodSync(scriptPath, 755)
