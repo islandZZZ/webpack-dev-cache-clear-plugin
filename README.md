@@ -4,13 +4,17 @@ a webpack plugin for Chrome dns &amp; socket pools cache clearing.
 
 # usage
 
+~~~
+npm i webpack-dev-cache-clear-plugin -D
+~~~
+
 ~~~js
-const WebpackDevCacheClearPlugin = require('./plugin/clear-plugin')
+const WebpackDevCacheClearPlugin = require('webpack-dev-cache-clear-plugin')
 
 module.exports = {
     plugins: [
         new WebpackDevCacheClearPlugin({
-            domains: ['a.com', 'b.com']
+            domains: ['test.com']
         })
     ]
 }
