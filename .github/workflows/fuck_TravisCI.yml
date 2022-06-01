@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  Run Test Task:
+  Run-Test-Task:
     runs-on: macos-latest
     steps:
     # 下载源码
