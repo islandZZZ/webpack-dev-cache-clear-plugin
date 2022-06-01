@@ -15,8 +15,8 @@ jobs:
     # 安装
     - name: Install
       run: npm install
-    # 测试
+    # 测试 测试不通过会自动中断流程，后续可以不进行打包上传
     - name: Test
       run: |
         npm run test
-        echo after test.....
+        echo All test cases have passed...
