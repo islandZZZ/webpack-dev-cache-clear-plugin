@@ -5,22 +5,24 @@ const fsExtra = require('fs-extra')
 const { chmodSync } = require('fs')
 const scriptPath = path.join(__dirname, './applescript/clear.scpt')
 const defaultChromeCacheDir = `${process.env.HOME}/Library/Caches/Google/Chrome/Default/Cache`
-const errMsg = 'WebpackDevCacheClearPlugin: Domains length must be greater than 0.'
+const domainErrMsg = 'WebpackDevCacheClearPlugin: error. Domain must be an array with a length greater than 0.'
+const systemErrMSg = 'WebpackDevCacheClearPlugin: error. only macOS system is supported.'
+
 const { isMacOS } = require('./util/index')
 
 const runTask = async (_domains) => {
     const domains = _domains || []
 
-    if (!_domains.length) {
-        console.log(colors.red(errMsg))
-        return Promise.reject(errMsg)
+    if (!Array.isArray(_domains) || !_domains.length) {
+        console.log(colors.red(domainErrMsg))
+        return Promise.reject(domainErrMsg)
     }
 
     if (!isMacOS()) {
-        console.log(colors.red('error: only macOS system is supported.'));
-        return Promise.reject('error: only macOS system is supported.')
+        console.log(colors.red(systemErrMSg));
+        return Promise.reject(systemErrMSg)
     }
-    
+
     chmodSync(scriptPath, 755)
     const shell = `sudo osascript ${scriptPath} ${domains.join(',')}`
     try {
@@ -37,6 +39,8 @@ const runTask = async (_domains) => {
 }
 
 module.exports = {
-    runTask
+    runTask,
+    domainErrMsg,
+    systemErrMSg
 }
 
