@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  Test:
+  Run Test Task:
     runs-on: macos-latest
     steps:
     # 下载源码
@@ -19,3 +19,4 @@ jobs:
     - name: Test
       run: |
         npm run test
+        echo after test.....
