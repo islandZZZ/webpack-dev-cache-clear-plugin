@@ -20,4 +20,5 @@ jobs:
     # 测试
     - name: Test
       run: npm run test
-    - run: echo hello~~~~
+    - name: Echo
+      run: echo hello~~~~
