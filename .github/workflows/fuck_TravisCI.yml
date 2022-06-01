@@ -4,11 +4,9 @@ on:
     branches:
       - main
 jobs:
-  Run-Test-Task:
+  Test:
     runs-on: macos-latest
     steps:
-      with:
-        cache: 'npm'
     # 下载源码
     - name: Checkout
       uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
@@ -19,6 +17,5 @@ jobs:
       run: npm install
     # 测试
     - name: Test
-      run: npm run test
-    - name: Echo
-      run: echo hello~~~~
+      run: |
+        npm run test
