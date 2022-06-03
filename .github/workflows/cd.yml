@@ -1,10 +1,11 @@
-name: Auto Publish
+name: Publish To NPM
 on:
   push:
     tags:
       - 'v*'
 jobs:
   publish:
+  
     runs-on: ubuntu-latest
 
     name: 'publish npm'
@@ -16,14 +17,12 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: '14'
+          registry-url: https://registry.npmjs.org/
 
-      - name: 'Publish to the npm registry'
-        uses: primer/publish@3.0.0
+      - name: publish 
         env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-        with:
-          default_branch: 'main'
+          NODE_AUTH_TOKEN: ${{secrets.CLEAR_PLUGIN_NPM_TOKEN}} 
+        run: npm publish
