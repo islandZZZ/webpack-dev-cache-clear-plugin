@@ -1,4 +1,4 @@
-name: WebpackDevCacheClearPlugin
+name: Test
 on:
   push:
     branches:
