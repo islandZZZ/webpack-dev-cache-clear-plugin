@@ -3,12 +3,8 @@ const path = require('path')
 const colors = require('colors')
 const fsExtra = require('fs-extra')
 const { chmodSync } = require('fs')
-const scriptPath = path.join(__dirname, './applescript/clear.scpt')
-const defaultChromeCacheDir = `${process.env.HOME}/Library/Caches/Google/Chrome/Default/Cache`
-const domainErrMsg = 'WebpackDevCacheClearPlugin: error. domains must be an array with a length greater than 0.'
-const systemErrMSg = 'WebpackDevCacheClearPlugin: error. only macOS system is supported.'
-
 const { isMacOS } = require('./util/index')
+const { scriptPath, defaultChromeCacheDir, domainErrMsg, systemErrMSg } = require('../constant')
 
 const runTask = async (_domains) => {
     const domains = _domains || []

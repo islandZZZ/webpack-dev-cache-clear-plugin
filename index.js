@@ -1,3 +1,2 @@
-const WebpackDevCacheClearPlugin = require("./plugin/clear-plugin");
-
+const WebpackDevCacheClearPlugin = require("./plugin/plugin");
 module.exports = WebpackDevCacheClearPlugin

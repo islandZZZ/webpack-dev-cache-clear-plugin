@@ -1,5 +1,4 @@
-
-const { isMacOS } = require('../dependency/util')
+const { isMacOS } = require("../dependency/util");
 
 describe('os test', () => {
     test('Is macOS system', () => {

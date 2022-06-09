@@ -1,9 +1,6 @@
 const path = require('path')
 const fs = require('fs')
-const homeDir = require('os').homedir //系统的home目录 home dir
-const home = process.env.HOME || homeDir // 系统配置的home环境变量 home variable
-const MACOS_SYSTEM = 'Darwin'
-const defaultConfigPath = path.join(home, 'node-cache-clear.config.json')
+const { MACOS_SYSTEM, defaultConfigPath } = require('../../constant')
 
 const readFile = (path) => {
     return new Promise((resolve, reject) => {
