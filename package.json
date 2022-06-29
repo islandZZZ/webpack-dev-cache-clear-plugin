@@ -11,7 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/islandZZZ/webpack-dev-cache-clear-plugin.git"
   },
-  "keywords": [],
+  "keywords": [
+    "webpack",
+    "plugin",
+    "cache",
+    "DNS",
+    "HTSTS",
+    "Socket Pools"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
