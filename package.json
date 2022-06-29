@@ -21,6 +21,13 @@
   ],
   "author": "",
   "license": "ISC",
+  "files":[
+    "/dependency",
+    "/plugin",
+    "constant.js",
+    "index.js",
+    "README.md"
+  ],
   "bugs": {
     "url": "https://github.com/islandZZZ/webpack-dev-cache-clear-plugin/issues"
   },
