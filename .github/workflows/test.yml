@@ -1,28 +1,22 @@
-name: Publish To NPM
+name: Test
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 jobs:
-  publish:
-  
-    runs-on: ubuntu-latest
-
-    name: 'publish npm'
-
-    environment: npm
-
+  Run-Test-Task:
+    runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
-        with:
-          persist-credentials: false
-
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '14'
-          registry-url: https://registry.npmjs.org/
-
-      - name: publish 
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.CLEAR_PLUGIN_NPM_TOKEN}} 
-        run: npm publish
+    # 下载源码
+    - name: Checkout
+      uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+      with:
+        persist-credentials: false
+    # 安装
+    - name: Install
+      run: npm install
+    # 测试 测试不通过会自动中断流程，后续可以不进行打包上传
+    - name: Test
+      run: |
+        npm run test
+        echo All test cases have passed...
