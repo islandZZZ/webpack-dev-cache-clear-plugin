@@ -1,4 +1,7 @@
-const { runTask, domainErrMsg } = require("../dependency/run");
+
+import { domainErrMsg } from '../constant';
+import { runTask } from '../dependency/run';
+
 
 describe('Test runTask', () => {
     test('Invalid domains length', () => {

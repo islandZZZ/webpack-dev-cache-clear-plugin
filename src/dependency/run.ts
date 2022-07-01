@@ -1,12 +1,13 @@
-const { execSync } = require('child_process')
-const path = require('path')
+import { execSync } from 'child_process'
 const colors = require('colors')
 const fsExtra = require('fs-extra')
-const { chmodSync } = require('fs')
-const { isMacOS } = require('./util/index')
-const { scriptPath, defaultChromeCacheDir, domainErrMsg, systemErrMSg } = require('../constant')
+// import fsExtra from 'fs-extra'
+import { chmodSync } from 'fs'
 
-const runTask = async (_domains) => {
+import { isMacOS } from './util/index'
+import { scriptPath, defaultChromeCacheDir, domainErrMsg, systemErrMsg } from '../constant'
+
+export const runTask = async (_domains) => {
     const domains = _domains || []
 
     if (!Array.isArray(_domains) || !_domains.length) {
@@ -15,8 +16,8 @@ const runTask = async (_domains) => {
     }
 
     if (!isMacOS()) {
-        console.log(colors.red(systemErrMSg));
-        return Promise.reject(systemErrMSg)
+        console.log(colors.red(systemErrMsg));
+        return Promise.reject(systemErrMsg)
     }
 
     chmodSync(scriptPath, 755)
@@ -32,11 +33,5 @@ const runTask = async (_domains) => {
         console.error(colors.red(error))
         return Promise.reject(error)
     }
-}
-
-module.exports = {
-    runTask,
-    domainErrMsg,
-    systemErrMSg
 }
 

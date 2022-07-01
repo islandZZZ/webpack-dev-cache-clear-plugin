@@ -1,6 +1,5 @@
-const path = require('path')
-const fs = require('fs')
-const { MACOS_SYSTEM, defaultConfigPath } = require('../../constant')
+import * as fs from 'fs'
+import { MACOS_SYSTEM, defaultConfigPath } from '../../constant'
 
 const readFile = (path) => {
     return new Promise((resolve, reject) => {
@@ -12,12 +11,12 @@ const readFile = (path) => {
 
 }
 
-const getConfig = (path = defaultConfigPath) => {
+export const getConfig = (path = defaultConfigPath) => {
     return new Promise(async (resolve, reject) => {
         const fileStr = await readFile(path)
         let config = null
         try {
-            config = JSON.parse(fileStr)
+            config = JSON.parse(fileStr as string)
         } catch (error) {
             config = []
         }
@@ -25,7 +24,7 @@ const getConfig = (path = defaultConfigPath) => {
     })
 }
 
-const setConfig = (arr, path = defaultConfigPath) => {
+export const setConfig = (arr, path = defaultConfigPath) => {
     const data = JSON.stringify(arr)
     return new Promise((resolve, reject) => {
         fs.writeFile(path, data, (err) => {
@@ -39,13 +38,7 @@ const setConfig = (arr, path = defaultConfigPath) => {
     })
 }
 
-const isMacOS = () => {
+export const isMacOS = () => {
     return require('os').type() === MACOS_SYSTEM
 }
 
-module.exports = {
-    getConfig,
-    setConfig,
-    isMacOS,
-    MACOS_SYSTEM
-}
