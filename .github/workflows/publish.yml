@@ -24,9 +24,9 @@ jobs:
 
 
       - name: Install and Build
-         run: |
-         npm install
-         npm run-script build
+        run: |
+          npm install
+          npm run-script build
 
       - name: Publish 
         env:
