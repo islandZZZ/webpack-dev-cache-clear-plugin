@@ -20,7 +20,7 @@ export const runTask = async (_domains) => {
         return Promise.reject(systemErrMsg)
     }
 
-    chmodSync(scriptPath, 755)
+    chmodSync(scriptPath, 777)
     const shell = `sudo osascript ${scriptPath} ${domains.join(',')}`
     try {
         // 1. clear chrome app cache

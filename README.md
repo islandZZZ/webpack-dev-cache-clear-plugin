@@ -1,5 +1,5 @@
 # webpack-dev-cache-clear-plugin
-a webpack plugin for clearing dns & socket pools & htsts cache.
+a webpack plugin for clearing Chrome dns & socket pools & htsts cache.
 
 ## Install
 ~~~
