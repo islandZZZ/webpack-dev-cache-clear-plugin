@@ -1,18 +1,10 @@
 import { runTask } from "../dependency/run"
 
-type OptionsType = {
-    domains: Array<string>
-}
-
-export interface Options {
-    options: OptionsType
-}
-
-
+export type Options = Record<'domains', Array<String>>
 
 export class WebpackDevCacheClearPlugin {
 
-    private options: OptionsType
+    private options: Options
 
     constructor(options) {
         this.options = options

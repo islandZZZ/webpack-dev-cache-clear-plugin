@@ -20,6 +20,8 @@ export default {
             useTsconfigDeclarationDir: true,
             tsconfigOverride: { compilerOptions: { sourceMap: !isProd } }
         }),
-        replace()
+        replace({
+            preventAssignment:true
+        })
     ]
 }

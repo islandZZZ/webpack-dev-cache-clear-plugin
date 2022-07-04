@@ -1,7 +1,7 @@
 # webpack-dev-cache-clear-plugin
 a webpack plugin for clearing Chrome dns & socket pools & htsts cache.
 
-## Install
+## Installation
 ~~~
 npm i webpack-dev-cache-clear-plugin -D
 ~~~
@@ -13,7 +13,7 @@ const WebpackDevCacheClearPlugin = require('webpack-dev-cache-clear-plugin')
 module.exports = {
     plugins: [
         new WebpackDevCacheClearPlugin({
-            domains: ['test.com']
+            domains: ['google.com']
         })
     ]
 }

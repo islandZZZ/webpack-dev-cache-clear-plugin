@@ -1,15 +1,13 @@
 import { execSync } from 'child_process'
 const colors = require('colors')
 const fsExtra = require('fs-extra')
-// import fsExtra from 'fs-extra'
 import { chmodSync } from 'fs'
-
 import { isMacOS } from './util/index'
 import { scriptPath, defaultChromeCacheDir, domainErrMsg, systemErrMsg } from '../constant'
 
 export const runTask = async (_domains) => {
     const domains = _domains || []
-
+    
     if (!Array.isArray(_domains) || !_domains.length) {
         console.log(colors.red(domainErrMsg))
         return Promise.reject(domainErrMsg)

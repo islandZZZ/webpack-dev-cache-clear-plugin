@@ -1,10 +1,9 @@
 import * as path from "path"
 
-import { homedir as homeDir } from 'os'//系统的home目录 home dir
+import { homedir as homeDir } from 'os'
 
 const home: string = process.env.HOME || homeDir() // 系统配置的home环境变量 home variable
 
-// require('../build/applescript/clear.scpt')
 export const scriptPath: string = path.join(__dirname, '../applescript/clear.scpt')
 
 export const defaultChromeCacheDir: string = `${process.env.HOME}/Library/Caches/Google/Chrome/Default/Cache`
