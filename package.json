@@ -8,7 +8,11 @@
     "test": "jest --coverage",
     "test-watch": "jest --watch",
     "build": "npm run clear && rollup -c rollup.config.ts --environment MODE:prod",
-    "clear": "rm -rf dist"
+    "clear": "rm -rf dist",
+    "v-patch": "npm version patch && npm run git-actions",
+    "v-minor": "npm version minor && npm run git-actions",
+    "v-major": "npm version major && npm run git-actions",
+    "trigger-pub": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
