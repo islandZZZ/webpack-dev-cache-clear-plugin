@@ -3,6 +3,7 @@ on:
   push:
     tags:
       - 'v*'
+      - '--tags'
 jobs:
   publish:
   
