@@ -12,9 +12,8 @@ export class WebpackDevCacheClearPlugin {
     }
 
     apply(compiler) {
-        compiler.hooks.beforeRun.tapAsync('WebpackDevCacheClearPlugin', async (compilation, callback) => {
-            await runTask(this.options.domains)
-            callback()
+        compiler.hooks.environment.tap('WebpackDevCacheClearPlugin', () => {
+            runTask(this.options.domains)
         })
     }
 }
