@@ -9,9 +9,9 @@
     "test-watch": "jest --watch",
     "build": "npm run clear && rollup -c rollup.config.ts --environment MODE:prod",
     "clear": "rm -rf dist",
-    "v-patch": "npm version patch && npm run git-actions",
-    "v-minor": "npm version minor && npm run git-actions",
-    "v-major": "npm version major && npm run git-actions",
+    "v-patch": "npm version patch && npm run trigger-pub",
+    "v-minor": "npm version minor && npm run trigger-pub",
+    "v-major": "npm version major && npm run trigger-pub",
     "trigger-pub": "git push && git push --tags"
   },
   "repository": {
