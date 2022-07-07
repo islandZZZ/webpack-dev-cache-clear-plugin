@@ -13,9 +13,9 @@
             "node", 
         ],
         "target": "ESNext", 
-        "outDir": "./dist",
+        // "outDir": "./dist",
         "declaration": true, 
-        "declarationDir": "./dist/types", 
+        // "declarationDir": "./dist/types", 
         "allowJs": true, 
         "lib": [ 
             "es5",
